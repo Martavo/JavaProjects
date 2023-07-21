@@ -1,0 +1,51 @@
+package M8_Exercici4;
+
+import java.util.Scanner;
+
+public class M8_Exercici4 {
+	private static Scanner sc = new Scanner (System.in);
+	public static void main(String[] args) {
+		
+		int opcion = 0;		
+		
+		do{
+		      mostrarMenu();
+		      opcion = sc.nextInt();
+		      sc.nextLine();
+		        	
+		      switch(opcion){
+		         case 0:
+		        	 System.out.println("Gracias por usar la aplicación");
+		            break;
+		         case 1:
+		        	
+		            break;
+		         case 2: 
+		        	
+		            break;
+		         case 3:
+		        	
+			        break;
+		          
+		 		default:
+	            System.out.println("Opción invalida, por favor elige una opción correcta");
+	            }
+	            System.out.println(); //Linea en blanco para separa las iteraciones del bucle
+		        }while(opcion !=3);  
+
+	}
+	
+	public static void mostrarMenu() {
+		
+		System.out.println("Elige la opción que quieras realizar");
+		System.out.println("0. Salir de la aplicación");
+		System.out.println("1. Dar de alta un edificio");
+		System.out.println("2. Eliminar edificio");
+		System.out.println("3. Modificar un edificio");
+		
+	}
+	
+	
+	
+
+}

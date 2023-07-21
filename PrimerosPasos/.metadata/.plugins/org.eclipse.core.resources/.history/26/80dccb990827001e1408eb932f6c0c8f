@@ -1,0 +1,45 @@
+package PruebaFinalEx2;
+
+import java.util.ArrayList;
+
+public class PruebaFinalEx2 {
+
+	public static void main(String[] args) {
+		ArrayList<String> disponibles = new ArrayList<>();
+		  disponibles.add("xampú");
+	      disponibles.add("sabó");
+	      disponibles.add("patates");
+	      disponibles.add("bledes");
+	      disponibles.add("lletuga");
+	      disponibles.add("limones");
+	      disponibles.add("kiwis");
+	      disponibles.add("alvocats");
+	      disponibles.add("fideus");
+	      disponibles.add("arròs");
+	      disponibles.add("cafè");
+	      disponibles.add("xocolata");
+	      
+	    ArrayList<String> comprar = new ArrayList<>();
+	      comprar.add("xampú");
+	      comprar.add("xocolata");
+	      comprar.add("alvocats");
+	      comprar.add("bledes");
+	      comprar.add("llimones");
+	      comprar.add("llimonada");
+
+	   ArrayList<String> comprats = new ArrayList<>();
+	   
+	   for (String producto : comprar) {
+           if (disponibles.contains(producto)) {
+        	   comprats.add(producto);
+           }
+       }
+	   
+	   System.out.println("Productos comprados:");
+       for (String producto : comprats) {
+           System.out.println(producto);
+       }
+	   
+	}
+
+}

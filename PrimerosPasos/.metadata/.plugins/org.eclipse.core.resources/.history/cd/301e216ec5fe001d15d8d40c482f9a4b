@@ -1,0 +1,14 @@
+
+public class Variables {
+
+	public static void main(String[] args) {
+		
+		byte edad = 25;
+		
+		edad = 75; //si se añade un valor a la variable anteriormente iniciada, se borra y se añade el nuevo valor
+		
+		System.out.println(edad);
+
+	}
+
+}

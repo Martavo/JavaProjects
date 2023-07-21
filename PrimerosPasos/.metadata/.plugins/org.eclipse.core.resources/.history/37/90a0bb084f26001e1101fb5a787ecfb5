@@ -1,0 +1,50 @@
+package Herencia;
+
+public abstract class Pilotos extends Trabajadores {
+	private double peso;
+    private double altura;
+    public static final double PELIGROSIDAD = 50000;
+
+    public Pilotos(String nombre, String apellido, int edad, double tiempoTrabajado, double sueldoBase, double altura, double peso) {
+        super(nombre, apellido, edad, tiempoTrabajado, sueldoBase);
+        this.peso = peso;
+        this.altura = altura;
+    }
+
+	
+	public double getPeso() {
+		return peso;
+	}
+
+	public void setPeso(double peso) {
+		this.peso = peso;
+	}
+
+	public double getAltura() {
+		return altura;
+	}
+
+	public void setAltura(double altura) {
+		this.altura = altura;
+	}
+	
+	
+	
+	public  double Sueldo() {
+		double sueldoTotal = Math.ceil((double)this.getSueldoBase()+(10000*getTiempoTrabajado())+PELIGROSIDAD);
+		
+		return sueldoTotal;
+		
+	}
+
+
+	@Override
+    public String toString() {
+        return "Piloto [peso=" + peso + ", altura=" + altura + ", nombre=" + getNombre() + ", apellido=" + getApellido()
+                + ", edad=" + getEdad() + ", tiempoTrabajado=" + getTiempoTrabajado() + ", sueldoBase=" + getSueldoBase() + "]";
+    }
+	
+	
+	
+	
+}

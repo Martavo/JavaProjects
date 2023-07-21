@@ -1,0 +1,24 @@
+import java.util.*; //importar toda la clase para que no de error
+public class Entrada_Ejemplo1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner teclado=new Scanner(System.in);
+		
+		System.out.println("Introduce tu nombre, por favor");
+		
+		String nombre=teclado.nextLine();
+		
+		System.out.println("Introduce apellido, por favor");
+		
+		String apellido=teclado.nextLine();
+		
+		System.out.println("Introduce tu edad, por favor");
+		
+		int edad=teclado.nextInt();
+		
+		System.out.println("Hola " + nombre + ", tu apellido es " + apellido + " y tienes " + edad + " años. ¿Es correcto?");
+	}
+
+}

@@ -1,0 +1,63 @@
+package Herencia;
+
+public class Coche {
+   
+	
+	private int potencia;
+    private int velocidadMaxima;
+    private String color;
+    private double precioMercado;
+	
+    
+    public Coche(String nombre, double presupuesto, String paisOrigen) {
+		this.potencia = potencia;
+		this.velocidadMaxima = velocidadMaxima;
+		this.color = color;
+		this.precioMercado = precioMercado;
+	}
+
+
+	public int getPotencia() {
+		return potencia;
+	}
+	public void setPotencia(int potencia) {
+		this.potencia = potencia;
+	}
+
+	public int getVelocidadMaxima() {
+		return velocidadMaxima;
+	}
+
+	public void setVelocidadMaxima(int velocidadMaxima) {
+		this.velocidadMaxima = velocidadMaxima;
+	}
+
+	public String getColor() {
+		return color;
+	}
+	
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public double getPrecioMercado() {
+		return precioMercado;
+	}
+
+	public void setPrecioMercado(double precioMercado) {
+		this.precioMercado = precioMercado;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Coche [potencia=" + potencia + ", velocidadMaxima=" + velocidadMaxima + ", color=" + color
+				+ ", precioMercado=" + precioMercado + ", nombre=" + nombre + ", presupuesto=" + presupuesto
+				+ ", paisOrigen=" + paisOrigen + "]";
+	}
+
+
+	
+	
+	
+}

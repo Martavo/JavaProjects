@@ -1,0 +1,40 @@
+
+public class Variables_y_constantes {
+
+	public static void main(String[] args) {
+		
+		//int c=5; //esto es una variable porque si en la siguiente linea ponemos otro valor, se reemplaza
+		
+		//c=10;
+		
+		//final int edad = 5; //esto es una constante, no se va a poder reemplazar
+		
+		//System.out.println(c);
+		
+		//System.out.println("Edad " + edad);
+		
+		final double apulgadas = 2.54;
+		
+		double cm=6;
+		
+		double resultado = cm/apulgadas;
+		
+		System.out.println("En " + cm + "cm hay " + resultado + " pulgadas"); //los "+" aqui son concatenaciones (unen palabras o valores para hacer la frase impresa)
+		
+		
+		int operador1, operador2, total;
+		
+		operador1 = 6;
+		
+		operador2 =2;
+		
+		total=operador1+operador2;
+		
+		System.out.println(total);
+		
+				
+		
+
+	}
+
+}

@@ -1,0 +1,58 @@
+package M8_Exercici6;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+import Herencia.Trabajadores;
+import Herencia.Mecanicos;
+
+public class M8_Exercici6 {
+	private static Scanner sc = new Scanner (System.in);
+	public static void main(String[] args) {
+	
+		Trabajadores mecanico       = new Mecanicos ("Melia", 10, 50000, 450);
+
+        
+        int opcion;
+		do{
+		      mostrarMenu();
+		      opcion = sc.nextInt();
+		      sc.nextLine();
+		        	
+		      switch(opcion){
+		         case 0:
+		        	 System.out.println("Gracias por usar la aplicación");
+		            break;
+		         case 1:
+		        	
+		            break;
+		         case 2: 
+		          
+		            break;
+		         case 3:
+		        	 
+			        break;
+		         case 4:	
+				    break;
+		 		default:
+	            System.out.println("Opción invalida, por favor elige una opción correcta");
+	            }
+	            System.out.println(); //Linea en blanco para separa las iteraciones del bucle
+		        }while(opcion !=4);  
+
+	}	
+	
+	public static void mostrarMenu() {
+		
+		System.out.println("Elige la opción que quieras realizar");
+		System.out.println("0. Salir de la aplicación");
+		System.out.println("1. Dar de alta un trabajador");
+		System.out.println("2. Mostrar un trabajador");
+		System.out.println("3. Eliminar un trabajador");
+		System.out.println("4. Mostrar listado de trabajador");
+		
+	}
+	
+	
+	
+}

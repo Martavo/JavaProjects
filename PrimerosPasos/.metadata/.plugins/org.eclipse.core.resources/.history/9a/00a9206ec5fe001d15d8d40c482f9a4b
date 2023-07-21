@@ -1,0 +1,29 @@
+
+public class Declaraciones_Operadores {
+
+	public static void main(String[] args) {
+		
+	double a=5;
+	
+	double b; //la considera como 7.0 para que pueda resultar un decimal
+	
+	b=7;
+	/*mgmgmmg
+	 * 
+	 */
+	//int c=b+a;
+	
+	//c++; //se incrementa 1 el valor c
+	
+	//c+=6; // se incrementa al 13 un valor de 6
+	
+	//c-=4; //se resta 4 al valor de 19 (el anterior)
+	
+	double c=b/a; //todos los valores que van en esa división tienen que llevar double aunque sea enteros
+	
+	System.out.println(c); //El ln de print es para que haga un salto de línea al imprimir. 
+	// Sin el ln imprimirá lo siguiente sin salto de línea
+	
+	}
+
+}

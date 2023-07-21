@@ -1,0 +1,14 @@
+package Herencia;
+
+public class Trabajadores {
+	protected String nombre;
+	protected String apellido;
+	protected int edad;
+	protected double tiempoTrabajado;
+	protected double sueldoBase;
+	
+	
+	
+	
+	
+}

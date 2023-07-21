@@ -1,0 +1,227 @@
+package M8_Exercici4;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import Herencia.Cine;
+import Herencia.Edificio;
+import Herencia.Hospital;
+import Herencia.Hotel;
+
+
+public class M8_Exercici4 {
+	private static Scanner sc = new Scanner (System.in);
+	public static void main(String[] args) {
+	
+		ArrayList<Edificio> listEdificios = new ArrayList<>();	
+		Hotel hotel       = new Hotel ("Melia", 10, 50000, 450);
+		Hospital hospital = new Hospital("Sant Joan", 9, 12000, 360);
+		Cine cine         = new Cine ("Cinesa", 2, 2000, 4000);
+		
+		listEdificios.add(hotel);
+		listEdificios.add(hospital);
+		listEdificios.add(cine);
+		
+		int opcion = 0;
+		Edificio edificio = null;		
+
+		
+		do{
+		      mostrarMenu();
+		      opcion = sc.nextInt();
+		      sc.nextLine();
+		        	
+		      switch(opcion){
+		         case 0:
+		        	 System.out.println("Gracias por usar la aplicación");
+		            break;
+		         case 1:
+		        	edificio = buscarEdificio(listEdificios);
+		        	crearEdificio(listEdificios, edificio );
+		        	verEdificios(listEdificios);
+		            break;
+		         case 2: 
+		            mostrarEdificio(listEdificios, edificio);
+		            break;
+		         case 3:
+		        	 edificio = buscarEdificio(listEdificios);
+		        	 eliminarEdificio(listEdificios, edificio);
+		        	 verEdificios(listEdificios);
+			        break;
+		         case 4:
+		        	 verEdificios(listEdificios);	
+				    break;
+		 		default:
+	            System.out.println("Opción invalida, por favor elige una opción correcta");
+	            }
+	            System.out.println(); //Linea en blanco para separa las iteraciones del bucle
+		        }while(opcion !=4);  
+
+	}
+	
+	public static void mostrarMenu() {
+		
+		System.out.println("Elige la opción que quieras realizar");
+		System.out.println("0. Salir de la aplicación");
+		System.out.println("1. Dar de alta un edificio");
+		System.out.println("2. Mostrar un edificio");
+		System.out.println("3. Eliminar edificio");
+		System.out.println("4. Mostrar listado de edificios");
+		
+	}
+	
+	public static Edificio buscarEdificio(ArrayList<Edificio>listEdificios) {
+		
+		int i = 0;
+		Edificio edificio = null;
+		
+		System.out.println("Introduza el nombre del edificio: ");
+		String nombre = sc.nextLine();
+		
+		while (edificio == null && i<listEdificios.size()) {
+			if (listEdificios.get(i).getNombre().equalsIgnoreCase(nombre)){
+				edificio =  listEdificios.get(i);
+			}
+			
+			i++;
+		}
+		
+		return edificio;
+	  
+	}
+	
+	public static void crearEdificio(ArrayList<Edificio>listEdificios, Edificio edificio) {
+		System.out.println("Introduza el tipo de edificio (Hotel, Hospital o Cine): ");
+		String tipoEdificio = sc.nextLine();
+		
+		if (edificio == null && tipoEdificio.equals("Hotel")) {
+			System.out.println("Nombre del edificio:");
+	    	String nombre = sc.nextLine();
+	    	
+	    	System.out.println("Número de plantas:");
+	    	int plantas = sc.nextInt();
+	    	
+	    	System.out.println("Súperficie del edificio:");
+	    	int superficie = sc.nextInt();
+	    	
+	    	System.out.println("Número de habitaciones:");
+	    	int habitaciones = sc.nextInt();
+	    	
+	    	Hotel hotel = new Hotel (nombre, plantas, superficie, habitaciones);
+	    	listEdificios.add(hotel);
+	    	System.out.println("El edificio ha sido creado correctamente");
+	    	
+		}else if (edificio == null && tipoEdificio.equals("Hospital")) {
+			
+			System.out.println("Nombre del edificio:");
+	    	String nombre = sc.nextLine();
+	    	
+	    	System.out.println("Número de plantas:");
+	    	int plantas = sc.nextInt();
+	    	
+	    	System.out.println("Súperficie del edificio:");
+	    	int superficie = sc.nextInt();
+	    	
+	    	System.out.println("Número de pacientes:");
+	    	int pacientes = sc.nextInt();
+	    	
+	    	Hospital hospital = new Hospital (nombre, plantas, superficie, pacientes);
+	    	listEdificios.add(hospital);
+	    	System.out.println("El edificio ha sido creado correctamente");
+			
+		}else if (edificio == null && tipoEdificio.equals("Cine")) {
+			System.out.println("Nombre del edificio:");
+	    	String nombre = sc.nextLine();
+	    	
+	    	System.out.println("Número de plantas:");
+	    	int plantas = sc.nextInt();
+	    	
+	    	System.out.println("Súperficie del edificio:");
+	    	int superficie = sc.nextInt();
+	    	
+	    	System.out.println("Número de personas de aforo máximo:");
+	    	int aforo = sc.nextInt();
+	    	
+	    	Cine cine = new Cine (nombre, plantas, superficie, aforo);
+	    	listEdificios.add(cine);
+	    	System.out.println("El edificio ha sido creado correctamente");
+			
+		}else {
+			System.out.println("El edificio ya está creado en el sistema");
+		}
+		
+		
+	}
+	public static void mostrarEdificio(ArrayList<Edificio>listEdificios, Edificio edificio) {
+		int i =0;
+		
+		System.out.println("¿Cual es el nombre del edificio?");
+		String nombreEdificio = sc.nextLine();
+		
+		Edificio edificio1 = buscarEdificio(listEdificios);
+		
+		if (edificio1 == null) {
+			System.out.println("El edificio " + nombreEdificio+ " no existe");
+		}else {
+			System.out.println("Nombre: " + edificio1.getNombre());
+	        System.out.println("Nombre de plantes: " + edificio1.getPlantas());
+	        System.out.println("Superfície: " + edificio1.getSuperficie() + " m²");
+	        
+	        if (edificio1 instanceof Hospital) {
+		           Hospital hospital = (Hospital) edificio1;
+		           System.out.println("Tipo edificio: Hospital");
+		           System.out.println("Número de malalts: " + hospital.getPacientes());
+		           System.out.println("Cost mensual de neteja: " + edificio1.limpiar() + " euros");
+		           System.out.println("Cost mensual de vigilància: " + hospital.Vigilancia() + " euros");
+		           hospital.repartirComida();
+		       } else if (edificio1 instanceof Cine) {
+		           Cine cinema = (Cine) edificio1;
+		           System.out.println("Tipo edificio: Cine");
+		           System.out.println("Aforament màxim: " + cinema.getAforoMaximo());
+		           System.out.println("Cost mensual de neteja: " + edificio1.limpiar() + " euros");
+		           System.out.println("Cost mensual de vigilància: " + cinema.Vigilancia() + " euros");
+		           cinema.proyectarSesion();
+		       } else if (edificio1 instanceof Hotel){
+		           Hotel hotel = (Hotel) edificio1;
+		           System.out.println("Tipo edificio: Hotel");
+		           System.out.println("Nombre d'habitacions: " + hotel.getHabitaciones());
+		           System.out.println("Cost mensual de neteja: " + edificio1.limpiar() + " euros");
+		           System.out.println("Cost mensual de vigilància: " + hotel.Vigilancia() + " euros");
+		           hotel.servicioHabitaciones();
+		       }
+	        
+		}    
+		 
+	}
+	
+	
+	public static void eliminarEdificio(ArrayList<Edificio>listEdificios, Edificio edificio) {
+
+		if (edificio != null) {
+			listEdificios.remove(edificio);
+			System.out.println("El cliente ha sido eliminado");
+		}else {
+			System.out.println("El cliente no está en el sistema");
+		}
+	}
+	
+	
+	public static void verEdificios(ArrayList<Edificio>listEdificios) {
+		System.out.println("Listado de edificios creados:");
+		for (Edificio edificio : listEdificios){
+			System.out.println(edificio.toString());
+	        System.out.println(edificio.limpiar());
+	        System.out.println(edificio.Vigilancia());
+	        
+	        if (edificio instanceof Hospital) {
+	        	System.out.println(((Hospital) edificio).limpiar());
+	        }else if (edificio instanceof Cine){
+	        	System.out.println(((Cine) edificio).proyectarSesion());
+	        }else {
+	        	System.out.println(((Hotel) edificio).servicioHabitaciones());
+	        }
+		}
+	}
+	
+
+}

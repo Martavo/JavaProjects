@@ -1,0 +1,28 @@
+
+public class Manipula_cadenas {
+
+	public static void main(String[] args) {
+	
+		//los datos de tipo String siempre van entre comillas dobles
+		String nombre = "Marta";
+		
+		System.out.println("Mi nombre es " + nombre);
+		
+		System.out.println("Mi nombre tiene " + nombre.length() + " letras");
+		
+		System.out.println("La primera letra de mi nombre es " + nombre.charAt(0));
+		
+		int ultima_letra;
+		
+		ultima_letra=nombre.length(); //estamos averiguando cuantas letras tiene el nombre 
+		
+		System.out.println("La ultima letra es la " + nombre.charAt(ultima_letra-1)); //Mi nombre tiene 5 letras, para que me dé la ultima posición que es la 4, 
+		// tengo que pedir la ultima letra -1 para que sea 5-1 (4) que es la A
+		
+		
+		
+	
+
+	}
+
+}

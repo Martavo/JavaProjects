@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;M7_2_Exercici7.zip&apos; to &apos;M7_Exercici2&apos;" description="Move &apos;M7_2_Exercici7.zip&apos; to &apos;M7_Exercici2&apos;" destination="/M7_Exercici2" element1="/PrimerosPasos/M7_2_Exercici7.zip" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1689760233838" updateReferences="true"/>
+</session>

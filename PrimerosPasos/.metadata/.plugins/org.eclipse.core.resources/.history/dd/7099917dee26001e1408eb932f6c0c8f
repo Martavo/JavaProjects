@@ -1,0 +1,172 @@
+package M8_Exercici6;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+import Herencia.Trabajadores;
+import Herencia.Coche;
+import Herencia.Escuderia;
+import Herencia.Mecanicos;
+import Herencia.Pilotos;
+
+public class M8_Exercici6 {
+	private static Scanner sc = new Scanner (System.in);
+	public static void main(String[] args) {
+	
+		ArrayList<Escuderia> listEscuderias = new ArrayList<>();
+		
+		Escuderia escuderia1 = new Escuderia("Ferrari", 1000000, "Italia"); // Creamos una escudería
+		listEscuderias.add(escuderia1);
+		Escuderia escuderia2 = new Escuderia("Aston Martin", 3000000, "Reino Unido"); // Creamos una escudería
+		listEscuderias.add(escuderia2);
+		Coche coche1 = new Coche(700, 320, "Rojo", 1000000);
+		Coche coche2 = new Coche(700, 290, "Blanco", 1000500);
+		
+		Mecanicos mecanico1 = new Mecanicos("Toni", "Perez", 34, 3, true);
+		listEscuderias.get(1).agregarTrabajador(mecanico1); 
+		
+		Pilotos piloto1 = new Pilotos("Marta", "Perez", 34, 2, 165, 61);
+		listEscuderias.get(0).agregarTrabajador(piloto1);
+	
+		listEscuderias.get(1).agregarCoche(coche1);	
+		listEscuderias.get(0).agregarCoche(coche2);
+		
+
+		Escuderia trabajador = null;	
+        int opcion;
+		do{
+		      mostrarMenu();
+		      opcion = sc.nextInt();
+		      sc.nextLine();
+		        	
+		      switch(opcion){
+		         case 0:
+		        	 System.out.println("Gracias por usar la aplicación");
+		            break;
+		         case 1:
+		        	trabajador = buscarTrabajador(listEscuderias);
+		        	altaTrabajador(listEscuderias, trabajador);
+		            break;
+		         case 2: 
+		        	 verTrabajadores(listEscuderias);
+		            break;
+		         case 3:
+		        	 
+			        break;
+		         case 4:	
+				    break;
+		 		default:
+	            System.out.println("Opción invalida, por favor elige una opción correcta");
+	            }
+	            System.out.println(); //Linea en blanco para separa las iteraciones del bucle
+		        }while(opcion !=5);  
+
+	}	
+	
+	public static void mostrarMenu() {
+		
+		System.out.println("Elige la opción que quieras realizar");
+		System.out.println("0. Salir de la aplicación");
+		System.out.println("1. Dar de alta un trabajador");
+		System.out.println("2. Mostrar un trabajador");
+		System.out.println("3. Eliminar un trabajador");
+		System.out.println("4. Mostrar listado de trabajador");
+		
+	}
+	
+	public static Escuderia buscarTrabajador(ArrayList<Escuderia>listEscuderias) {
+		
+		int i = 0;
+		Escuderia trabajador = null;
+		
+		System.out.println("Introduza el nombre del trabajador: ");
+		String nombre = sc.nextLine();
+		
+		while (trabajador == null && i<listEscuderias.size()) {
+			if (listEscuderias.get(i).getNombre().equalsIgnoreCase(nombre)){
+				trabajador =  listEscuderias.get(i);
+			}
+			
+			i++;
+		}
+		
+		return trabajador;
+	  
+	}
+	
+	
+	
+	public static void altaTrabajador(ArrayList<Escuderia>listEscuderias, Escuderia trabajador) {
+		int i = 0;
+		System.out.println("Introduza el tipo de trabajador (Piloto o Mecánico): ");
+		String tipoTrabajador = sc.nextLine();
+		System.out.println("Introduza a que escuderia pertenece (Ferrari o Aston Martin): ");
+		String escuderia = sc.nextLine();
+		
+		if (escuderia == "Ferrari" ) {
+			i = 0;
+		}else if (escuderia == "Aston Martin"){
+			i=1;
+		}
+		
+		if (trabajador == null && tipoTrabajador.equals("Piloto")) {
+			System.out.println("Nombre del trabajador:");
+	    	String nombre = sc.nextLine();
+
+	    	System.out.println("Apellido del trabajador:");
+	    	String apellido = sc.nextLine();
+	    	
+	    	System.out.println("Edad del trabajador:");
+	    	int edad = sc.nextInt();
+	    	
+	    	System.out.println("Antigüedad en la empresa:");
+	    	double tiempoTrabajando = sc.nextDouble();
+	    	
+	    	System.out.println("Altura del trabajador:");
+	    	double altura = sc.nextDouble();
+	    	
+	    	System.out.println("Peso del trabajador:");
+	    	double peso = sc.nextDouble();
+
+	    	
+	    	Pilotos piloto1 = new Pilotos (nombre, apellido, edad, tiempoTrabajando,  altura, peso);
+	    	listEscuderias.get(i).agregarTrabajador(piloto1); 
+	    	System.out.println("El trabajador ha sido creado correctamente");
+	    	
+		}else if (trabajador == null && tipoTrabajador.equals("Mecanico")) {
+			
+			System.out.println("Nombre del trabajador:");
+	    	String nombre = sc.nextLine();
+
+	    	System.out.println("Apellido del trabajador:");
+	    	String apellido = sc.nextLine();
+	    	
+	    	System.out.println("Edad del trabajador:");
+	    	int edad = sc.nextInt();
+	    	
+	    	System.out.println("Edad del trabajador:");
+	    	double tiempoTrabajando = sc.nextDouble();
+	    	
+	    	System.out.println("¿Tiene estudios superiores de mecánica? (Sí: true / No: false): ");
+	        boolean estudiosMecanica = Boolean.parseBoolean(sc.nextLine());
+	        sc.nextLine();
+	    	
+	    	Mecanicos mecanico1 = new Mecanicos (nombre, apellido, edad, tiempoTrabajando, estudiosMecanica);
+	    	listEscuderias.get(i).agregarTrabajador(mecanico1); 
+	    	System.out.println("El trabajador ha sido creado correctamente");
+			
+		}else {
+			System.out.println("El trabajador ya está creado en el sistema");
+		}
+		
+	}
+	
+	public static void verTrabajadores(ArrayList<Escuderia>listEscuderias) {
+		System.out.println("Listado de escuderias :");
+		for (Escuderia escuderia : listEscuderias){
+			System.out.println(escuderia.toString());
+			System.out.println(escuderia.getListCoches());
+			System.out.println(escuderia.getListTrabajadores());
+		}
+	}
+}

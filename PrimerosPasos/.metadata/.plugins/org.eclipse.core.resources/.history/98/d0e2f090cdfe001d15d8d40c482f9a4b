@@ -1,0 +1,26 @@
+import java.util.*;
+public class FonamentsEx3 {
+
+	public static void main(String[] args) {
+		
+		
+		Scanner notas=new Scanner (System.in);
+		
+		System.out.println("Introdueix la nota de matemàtiques, si us plau");
+		
+		double nota1=notas.nextDouble();
+		
+		System.out.println("Introdueix la nota de d'anglès, si us plau");
+		
+		double nota2=notas.nextDouble();
+		
+		System.out.println("Introdueix la nota d'història, si us plau");
+		
+		double nota3=notas.nextDouble();
+		
+		double notafinal=(nota1+nota2+nota3)/3;
+		
+		System.out.println("La mitjana de les tres notes és: " + notafinal);
+	}
+
+}

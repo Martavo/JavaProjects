@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="Herencia.Edificio"/>
+    <fullyQualifiedTypeName name="Herencia.Hotel"/>
+    <fullyQualifiedTypeName name="Herencia.Hospital"/>
+    <fullyQualifiedTypeName name="Herencia.Cine"/>
+    <fullyQualifiedTypeName name="Herencia.Trabajadores"/>
+    <fullyQualifiedTypeName name="Herencia.Coche"/>
+    <fullyQualifiedTypeName name="Herencia.Escuderia"/>
+    <fullyQualifiedTypeName name="Herencia.Pilotos"/>
+</qualifiedTypeNameHistroy>

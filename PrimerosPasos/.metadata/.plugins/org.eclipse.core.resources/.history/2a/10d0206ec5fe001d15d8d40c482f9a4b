@@ -1,0 +1,21 @@
+import javax.swing.*;
+public class Entrada_Ejemplo2 {
+
+	public static void main(String[] args) {
+		
+		String nombre_usuario=JOptionPane.showInputDialog("Introduce tu nombre, por favor");
+		
+		String edad=JOptionPane.showInputDialog("Introduce tu edad, por favor"); //para que el programa puede hacer operaciones con el valor edad que es un numero
+		//hay que pasarlo a valor int. 
+		
+		int edad_usuario=Integer.parseInt(edad); //con esto hemos pasado el valor de ser un String a ser un int
+		
+		String altura_usuario=JOptionPane.showInputDialog("Introduce tu altura, por favor");
+		
+		System.out.println("Hola " + nombre_usuario + ". El próximo año tendras " + (edad_usuario+1) + " años. Y mides " + altura_usuario+ " cm. Gracias por la información.");
+		
+		
+
+	}
+
+}

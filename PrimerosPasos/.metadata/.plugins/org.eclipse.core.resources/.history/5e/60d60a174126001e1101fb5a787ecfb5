@@ -1,0 +1,60 @@
+package Herencia;
+
+public abstract class Trabajadores {
+	protected String nombre;
+	protected String apellido;
+	protected int edad;
+	protected double tiempoTrabajado;
+	protected double sueldoBase;
+	
+	public Trabajadores(String nombre, String apellido, int edad, double tiempoTrabajado, double sueldoBase) {
+		super();
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.edad = edad;
+		this.tiempoTrabajado = tiempoTrabajado;
+		this.sueldoBase = sueldoBase;
+	}
+
+	
+	
+	
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public String getApellido() {
+		return apellido;
+	}
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+	public int getEdad() {
+		return edad;
+	}
+	public void setEdad(int edad) {
+		this.edad = edad;
+	}
+	public double getTiempoTrabajado() {
+		return tiempoTrabajado;
+	}
+	public void setTiempoTrabajado(double tiempoTrabajado) {
+		this.tiempoTrabajado = tiempoTrabajado;
+	}
+	public double getSueldoBase() {
+		return sueldoBase;
+	}
+	
+
+
+
+	@Override
+	public String toString() {
+		return "Trabajadores [nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + ", tiempoTrabajado="
+				+ tiempoTrabajado + ", sueldoBase=" + sueldoBase + "]";
+	}
+	
+}
+

@@ -1,0 +1,34 @@
+package Herencia;
+
+public abstract class Mecanicos extends Trabajadores {
+	
+	private boolean estudiosMecanica;
+
+    public Mecanicos(String nombre, String apellido, int edad, double tiempoTrabajado, double sueldoBase, boolean estudiosMecanica) {
+        super(nombre, apellido, edad, tiempoTrabajado, sueldoBase);
+        this.estudiosMecanica = estudiosMecanica;
+    }
+
+	
+
+
+	public  double Sueldo() {
+		double sueldoTotal = 50000;
+		
+		return sueldoTotal;
+		
+	}
+
+
+
+
+
+	@Override
+    public String toString() {
+        return "Mecanico [estudiosMecanica=" + estudiosMecanica + ", nombre=" + getNombre() + ", apellido=" + getApellido()
+                + ", edad=" + getEdad() + ", tiempoTrabajado=" + getTiempoTrabajado() + ", sueldoBase=" + getSueldoBase() + "]";
+    }
+
+
+
+}

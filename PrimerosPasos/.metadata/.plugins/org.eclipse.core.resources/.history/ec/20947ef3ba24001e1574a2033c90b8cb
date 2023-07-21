@@ -1,0 +1,154 @@
+package M8_Exercici4;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import Herencia.Cine;
+import Herencia.Edificio;
+import Herencia.Hospital;
+import Herencia.Hotel;
+
+
+
+public class M8_Exercici4 {
+	private static Scanner sc = new Scanner (System.in);
+	public static void main(String[] args) {
+	
+		ArrayList<Edificio> listEdificios = new ArrayList<>();	
+		Hotel hotel = new Hotel ("Melia", 10, 50000, 450);
+		Hospital hospital = new Hospital("Sant Joan", 9, 12000, 360);
+		Cine cine = new Cine ("Cinesa", 2, 2000, 4000);
+		
+		listEdificios.add(hotel);
+		listEdificios.add(hospital);
+		listEdificios.add(cine);
+		
+		int opcion = 0, posicion;		
+		String tipoEdificio = null;
+		
+		do{
+		      mostrarMenu();
+		      opcion = sc.nextInt();
+		      sc.nextLine();
+		        	
+		      switch(opcion){
+		         case 0:
+		        	 System.out.println("Gracias por usar la aplicación");
+		            break;
+		         case 1:
+		        	posicion = buscarEdificio(listEdificios);
+		        	crearEdificio(listEdificios, posicion, tipoEdificio);
+		            break;
+		         case 2: 
+		        	
+		            break;
+		         case 3:
+		        	
+			        break;
+		         case 4:
+			        	
+				    break;
+		 		default:
+	            System.out.println("Opción invalida, por favor elige una opción correcta");
+	            }
+	            System.out.println(); //Linea en blanco para separa las iteraciones del bucle
+		        }while(opcion !=3);  
+
+	}
+	
+	public static void mostrarMenu() {
+		
+		System.out.println("Elige la opción que quieras realizar");
+		System.out.println("0. Salir de la aplicación");
+		System.out.println("1. Dar de alta un edificio");
+		System.out.println("2. Eliminar edificio");
+		System.out.println("3. Modificar un edificio");
+		System.out.println("3. Mostrar listado de edificios");
+		
+	}
+	
+	public static int buscarEdificio(ArrayList<Edificio>listEdificios) {
+		
+		int posicion = -1, i = 0;
+		System.out.println("Introduza el tipo de edificio (Hotel, Hospital o Cine): ");
+		String tipoEdificio = sc.nextLine();
+		
+		System.out.println("Introduza el nombre del edificio: ");
+		String nombre = sc.nextLine();
+		Edificio edificio = null;
+		
+		while (posicion == -1 && i<listEdificios.size()) {
+			if (listEdificios.get(i).getNombre().equalsIgnoreCase(nombre)){
+				posicion = i;
+			}
+			
+			i++;
+		}
+		
+		return posicion;
+	  
+	}
+	
+	public static void crearEdificio(ArrayList<Edificio>listEdificios, int posicion, String tipoEdificio) {
+		
+		if (posicion == -1 && tipoEdificio == "Hotel") {
+			System.out.println("Nombre del edificio:");
+	    	String nombre = sc.nextLine();
+	    	
+	    	System.out.println("Número de plantas:");
+	    	int plantas = sc.nextInt();
+	    	
+	    	System.out.println("Súperficie del edificio:");
+	    	int superficie = sc.nextInt();
+	    	
+	    	System.out.println("Número de habitaciones:");
+	    	int habitaciones = sc.nextInt();
+	    	
+	    	Hotel hotel = new Hotel (nombre, plantas, superficie, habitaciones);
+	    	listEdificios.add(hotel);
+	    	System.out.println("El edificio ha sido creado correctamente");
+	    	
+		}else if (posicion == -1 && tipoEdificio == "Hospital") {
+			
+			System.out.println("Nombre del edificio:");
+	    	String nombre = sc.nextLine();
+	    	
+	    	System.out.println("Número de plantas:");
+	    	int plantas = sc.nextInt();
+	    	
+	    	System.out.println("Súperficie del edificio:");
+	    	int superficie = sc.nextInt();
+	    	
+	    	System.out.println("Número de pacientes:");
+	    	int pacientes = sc.nextInt();
+	    	
+	    	Hospital hospital = new Hospital (nombre, plantas, superficie, pacientes);
+	    	listEdificios.add(hospital);
+	    	System.out.println("El edificio ha sido creado correctamente");
+			
+		}else if (posicion == -1 && tipoEdificio == "Cine") {
+			System.out.println("Nombre del edificio:");
+	    	String nombre = sc.nextLine();
+	    	
+	    	System.out.println("Número de plantas:");
+	    	int plantas = sc.nextInt();
+	    	
+	    	System.out.println("Súperficie del edificio:");
+	    	int superficie = sc.nextInt();
+	    	
+	    	System.out.println("Número de personas de aforo máximo:");
+	    	int aforo = sc.nextInt();
+	    	
+	    	Cine cine = new Cine (nombre, plantas, superficie, aforo);
+	    	listEdificios.add(cine);
+	    	System.out.println("El edificio ha sido creado correctamente");
+			
+		}else {
+			System.out.println("El edificio ya está creado en el sistema");
+		}
+		
+		
+	}
+	
+
+}

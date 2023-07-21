@@ -1,0 +1,17 @@
+package M8_Exercici4;
+
+public class Cine extends Edificio{
+
+	
+	
+	
+	
+	
+	public  String Vigilancia() {
+		return null;
+	
+	}
+	
+	
+	
+}

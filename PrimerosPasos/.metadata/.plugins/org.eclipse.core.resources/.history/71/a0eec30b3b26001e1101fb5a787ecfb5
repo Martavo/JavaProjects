@@ -1,0 +1,11 @@
+package Herencia;
+
+public class Pilotos extends Trabajadores {
+	private double peso;
+	private double altura;
+	
+	
+	
+	
+	
+}

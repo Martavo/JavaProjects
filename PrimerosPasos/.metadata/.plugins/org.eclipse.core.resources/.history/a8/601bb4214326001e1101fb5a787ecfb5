@@ -1,0 +1,26 @@
+package Herencia;
+
+public abstract class Mecanicos extends Trabajadores {
+	
+	private boolean estudiosMecanica;
+	
+
+	public Mecanicos(String nombre, double presupuesto, String paisOrigen) {
+		super(nombre, presupuesto, paisOrigen);
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+
+
+	@Override
+	public String toString() {
+		return "Mecanicos [estudiosMecanica=" + estudiosMecanica + ", nombre=" + nombre + ", apellido=" + apellido
+				+ ", edad=" + edad + ", tiempoTrabajado=" + tiempoTrabajado + ", sueldoBase=" + sueldoBase + "]";
+	}
+
+
+
+
+}

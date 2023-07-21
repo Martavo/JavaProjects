@@ -1,0 +1,5 @@
+package M8_Exercici4;
+
+public class Hotel extends Edificio{
+
+}

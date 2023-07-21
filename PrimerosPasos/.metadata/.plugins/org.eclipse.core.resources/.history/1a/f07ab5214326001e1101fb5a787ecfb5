@@ -1,0 +1,46 @@
+package Herencia;
+
+import java.util.ArrayList;
+
+public class Escuderia {
+	private String nombre;
+	private double presupuesto;
+	private String paisOrigen;
+	private ArrayList<Trabajadores> listTrabajadores;
+	private ArrayList<Trabajadores> listCoches;
+	
+	public Escuderia(String nombre, double presupuesto, String paisOrigen) {
+		super();
+		this.nombre = nombre;
+		this.presupuesto = presupuesto;
+		this.paisOrigen = paisOrigen;
+	}
+
+	
+
+	public double getPresupuesto() {
+		return presupuesto;
+	}
+
+	public void setPresupuesto(double presupuesto) {
+		this.presupuesto = presupuesto;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public String getPaisOrigen() {
+		return paisOrigen;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Escuderia [nombre=" + nombre + ", presupuesto=" + presupuesto + ", paisOrigen=" + paisOrigen + "]";
+	}
+
+    
+    
+}

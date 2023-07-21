@@ -1,0 +1,12 @@
+package M8_Exercici4;
+
+public class Hospital extends Edificio{
+
+	
+	public  String Vigilancia() {
+		return null;
+	
+	}
+	
+	
+}

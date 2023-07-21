@@ -1,0 +1,22 @@
+package M8_Exercici4;
+
+public class Hospital extends Edificio{
+
+	
+	
+	
+	public  String Vigilancia() {
+		
+		String text;
+		
+		int vigilancia = getSuperficie()/1000;
+		
+		int costeVigilancia = vigilancia*1500;
+		
+		text = ("Se necesitan" + vigilancia + " personas para la vigilancia. Tiene un coste mensual de: " + costeVigilancia);
+		
+		return text;
+		
+	}
+	
+}

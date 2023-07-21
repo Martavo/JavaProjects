@@ -1,0 +1,70 @@
+package M8_Exercici6;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+import Herencia.Trabajadores;
+import Herencia.Coche;
+import Herencia.Escuderia;
+import Herencia.Mecanicos;
+
+public class M8_Exercici6 {
+	private static Scanner sc = new Scanner (System.in);
+	public static void main(String[] args) {
+	
+		ArrayList<Escuderia> listEscuderias = new ArrayList<>();
+		
+		Escuderia escuderia1 = new Escuderia("Ferrari", 1000000, "Italia"); // Creamos una escudería
+		Escuderia escuderia2 = new Escuderia("Aston Martin", 3000000, "Reino Unido"); // Creamos una escudería
+       
+		Coche coche1 = new Coche(700, 320, "Rojo", 1000000);
+		Coche coche2 = new Coche(700, 290, "Blanco", 1000500);
+	
+		listEscuderias.get(0).agregarCoche(coche1);	
+		listEscuderias.get(1).agregarCoche(coche2);
+		
+
+			
+        int opcion;
+		do{
+		      mostrarMenu();
+		      opcion = sc.nextInt();
+		      sc.nextLine();
+		        	
+		      switch(opcion){
+		         case 0:
+		        	 System.out.println("Gracias por usar la aplicación");
+		            break;
+		         case 1:
+		        	
+		            break;
+		         case 2: 
+		          
+		            break;
+		         case 3:
+		        	 
+			        break;
+		         case 4:	
+				    break;
+		 		default:
+	            System.out.println("Opción invalida, por favor elige una opción correcta");
+	            }
+	            System.out.println(); //Linea en blanco para separa las iteraciones del bucle
+		        }while(opcion !=4);  
+
+	}	
+	
+	public static void mostrarMenu() {
+		
+		System.out.println("Elige la opción que quieras realizar");
+		System.out.println("0. Salir de la aplicación");
+		System.out.println("1. Dar de alta un trabajador");
+		System.out.println("2. Mostrar un trabajador");
+		System.out.println("3. Eliminar un trabajador");
+		System.out.println("4. Mostrar listado de trabajador");
+		
+	}
+	
+	
+	
+}

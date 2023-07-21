@@ -1,0 +1,39 @@
+package M8_Exercici4;
+
+
+public abstract class Edificio {
+	
+	private String nombre;
+	private int plantas;
+	private int superficie;
+	
+	
+	
+	
+	public String getNombre() {
+		return nombre;
+	}
+	public int getPlantas() {
+		return plantas;
+	}
+	public int getSuperficie() {
+		return superficie;
+	}
+	
+	
+	public String limpiar() {
+		
+		float tiempoPlanta = (float) (plantas*0.5);
+		float tiempoLimpiar = (superficie/5)+tiempoPlanta;
+		
+		float costeMensual = tiempoLimpiar*30;
+		
+		String texto = ("Se necesitan "+ tiempoLimpiar+ " minutos para limpiar cada día, Tiene un coste mensual de: " + costeMensual);
+		
+		return texto;
+	}
+	
+	
+	public abstract String Vigilancia(); //es abstracto
+	
+}
